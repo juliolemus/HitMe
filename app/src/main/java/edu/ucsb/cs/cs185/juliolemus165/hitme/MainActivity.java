@@ -5,13 +5,57 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.wenchao.cardstack.CardStack;
+
 
 public class MainActivity extends ActionBarActivity {
+
+    private CardStack cards;
+    private CardsDataAdapter cardsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        cards = (CardStack)findViewById(R.id.container);
+        cards.setContentResource(R.layout.card_layout);
+        cards.setStackMargin(20);
+
+        cardsAdapter = new CardsDataAdapter(getApplicationContext(),0);
+        cardsAdapter.add("Text1");
+        cardsAdapter.add("Text2");
+
+        cardsAdapter.add("Text3");
+        cardsAdapter.add("Text4");
+        cardsAdapter.add("Text5");
+
+        cardsAdapter.add("Text3");
+        cardsAdapter.add("Text4");
+        cardsAdapter.add("Text5");
+
+        cardsAdapter.add("Text3");
+        cardsAdapter.add("Text4");
+        cardsAdapter.add("Text5");
+
+        cardsAdapter.add("Text3");
+        cardsAdapter.add("Text4");
+        cardsAdapter.add("Text5");
+
+        cardsAdapter.add("Text3");
+        cardsAdapter.add("Text4");
+        cardsAdapter.add("Text5");
+
+        cardsAdapter.add("Text3");
+        cardsAdapter.add("Text4");
+        cardsAdapter.add("Text5");
+
+        cardsAdapter.add("Text3");
+        cardsAdapter.add("Text4");
+        cardsAdapter.add("Text5");
+
+
+        cards.setAdapter(cardsAdapter);
     }
 
     @Override
